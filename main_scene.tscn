@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://duhlt0ovssaxd"]
+
+[ext_resource type="PackedScene" uid="uid://c8u5ep1g8vmvi" path="res://block.tscn" id="1_2c62f"]
+[ext_resource type="PackedScene" uid="uid://di0oivugrdg5t" path="res://ball.tscn" id="2_2c62f"]
+[ext_resource type="Script" uid="uid://clsa2c2a3n5xb" path="res://animatable_body_2d.gd" id="3_gyfs4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0f027"]
+distance = -324.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2c62f"]
+normal = Vector2(0, 1)
+distance = -325.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gyfs4"]
+normal = Vector2(1, 0)
+distance = -576.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d5x1h"]
+normal = Vector2(-1, 0)
+distance = -574.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c62f"]
+size = Vector2(200, 40)
+
+[sub_resource type="QuadMesh" id="QuadMesh_gyfs4"]
+
+[node name="MainScene" type="Node2D" unique_id=1086825745]
+
+[node name="Ball" parent="." unique_id=289943280 instance=ExtResource("2_2c62f")]
+position = Vector2(116, 130)
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=1377550401]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders" unique_id=1429670956]
+shape = SubResource("WorldBoundaryShape2D_0f027")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders" unique_id=1082275305]
+shape = SubResource("WorldBoundaryShape2D_2c62f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Borders" unique_id=566766124]
+shape = SubResource("WorldBoundaryShape2D_gyfs4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Borders" unique_id=1941232967]
+shape = SubResource("WorldBoundaryShape2D_d5x1h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1011170358]
+
+[node name="Blocks" type="Node2D" parent="." unique_id=1846858165]
+position = Vector2(0, -80)
+
+[node name="Block" parent="Blocks" unique_id=1902088114 instance=ExtResource("1_2c62f")]
+position = Vector2(-480, -160)
+
+[node name="Block2" parent="Blocks" unique_id=1171922670 instance=ExtResource("1_2c62f")]
+position = Vector2(-320, -160)
+
+[node name="Block3" parent="Blocks" unique_id=1088576502 instance=ExtResource("1_2c62f")]
+position = Vector2(-160, -160)
+
+[node name="Block5" parent="Blocks" unique_id=103649387 instance=ExtResource("1_2c62f")]
+position = Vector2(80, -160)
+
+[node name="Block7" parent="Blocks" unique_id=386304708 instance=ExtResource("1_2c62f")]
+position = Vector2(320, -160)
+
+[node name="Block8" parent="Blocks" unique_id=1944879959 instance=ExtResource("1_2c62f")]
+position = Vector2(480, -160)
+
+[node name="Block9" parent="Blocks" unique_id=1460634933 instance=ExtResource("1_2c62f")]
+position = Vector2(-480, -110)
+
+[node name="Block10" parent="Blocks" unique_id=1029702515 instance=ExtResource("1_2c62f")]
+position = Vector2(-320, -110)
+
+[node name="Block11" parent="Blocks" unique_id=2027424937 instance=ExtResource("1_2c62f")]
+position = Vector2(-160, -110)
+
+[node name="Block13" parent="Blocks" unique_id=1713824291 instance=ExtResource("1_2c62f")]
+position = Vector2(80, -110)
+
+[node name="Block15" parent="Blocks" unique_id=138732053 instance=ExtResource("1_2c62f")]
+position = Vector2(320, -110)
+
+[node name="Block16" parent="Blocks" unique_id=111506298 instance=ExtResource("1_2c62f")]
+position = Vector2(480, -110)
+
+[node name="Block17" parent="Blocks" unique_id=790621289 instance=ExtResource("1_2c62f")]
+position = Vector2(-480, -60)
+
+[node name="Block18" parent="Blocks" unique_id=972523186 instance=ExtResource("1_2c62f")]
+position = Vector2(-320, -60)
+
+[node name="Block19" parent="Blocks" unique_id=1842014708 instance=ExtResource("1_2c62f")]
+position = Vector2(-160, -60)
+
+[node name="Block21" parent="Blocks" unique_id=1238655057 instance=ExtResource("1_2c62f")]
+position = Vector2(80, -60)
+
+[node name="Block23" parent="Blocks" unique_id=862700827 instance=ExtResource("1_2c62f")]
+position = Vector2(320, -60)
+
+[node name="Block24" parent="Blocks" unique_id=2027410436 instance=ExtResource("1_2c62f")]
+position = Vector2(480, -60)
+
+[node name="Block25" parent="Blocks" unique_id=1242105463 instance=ExtResource("1_2c62f")]
+position = Vector2(-480, -10)
+
+[node name="Block26" parent="Blocks" unique_id=2034379422 instance=ExtResource("1_2c62f")]
+position = Vector2(-320, -10)
+
+[node name="Block27" parent="Blocks" unique_id=1633815719 instance=ExtResource("1_2c62f")]
+position = Vector2(-160, -10)
+
+[node name="Block29" parent="Blocks" unique_id=573549417 instance=ExtResource("1_2c62f")]
+position = Vector2(80, -10)
+
+[node name="Block31" parent="Blocks" unique_id=1806246589 instance=ExtResource("1_2c62f")]
+position = Vector2(320, -10)
+
+[node name="Block33" parent="Blocks" unique_id=1779665113 instance=ExtResource("1_2c62f")]
+position = Vector2(-400, -160)
+
+[node name="Block34" parent="Blocks" unique_id=181071292 instance=ExtResource("1_2c62f")]
+position = Vector2(-240, -160)
+
+[node name="Block35" parent="Blocks" unique_id=227123473 instance=ExtResource("1_2c62f")]
+position = Vector2(-80, -160)
+
+[node name="Block36" parent="Blocks" unique_id=777440066 instance=ExtResource("1_2c62f")]
+position = Vector2(0, -160)
+
+[node name="Block37" parent="Blocks" unique_id=782372486 instance=ExtResource("1_2c62f")]
+position = Vector2(160, -160)
+
+[node name="Block38" parent="Blocks" unique_id=1686526740 instance=ExtResource("1_2c62f")]
+position = Vector2(240, -160)
+
+[node name="Block39" parent="Blocks" unique_id=426874790 instance=ExtResource("1_2c62f")]
+position = Vector2(400, -160)
+
+[node name="Block40" parent="Blocks" unique_id=1345287977 instance=ExtResource("1_2c62f")]
+position = Vector2(-400, -110)
+
+[node name="Block41" parent="Blocks" unique_id=73107189 instance=ExtResource("1_2c62f")]
+position = Vector2(-240, -110)
+
+[node name="Block42" parent="Blocks" unique_id=343890964 instance=ExtResource("1_2c62f")]
+position = Vector2(-80, -110)
+
+[node name="Block43" parent="Blocks" unique_id=643114893 instance=ExtResource("1_2c62f")]
+position = Vector2(0, -110)
+
+[node name="Block44" parent="Blocks" unique_id=1343427405 instance=ExtResource("1_2c62f")]
+position = Vector2(160, -110)
+
+[node name="Block45" parent="Blocks" unique_id=1985844902 instance=ExtResource("1_2c62f")]
+position = Vector2(240, -110)
+
+[node name="Block46" parent="Blocks" unique_id=1797522479 instance=ExtResource("1_2c62f")]
+position = Vector2(400, -110)
+
+[node name="Block47" parent="Blocks" unique_id=1472434131 instance=ExtResource("1_2c62f")]
+position = Vector2(-400, -60)
+
+[node name="Block48" parent="Blocks" unique_id=34725651 instance=ExtResource("1_2c62f")]
+position = Vector2(-240, -60)
+
+[node name="Block49" parent="Blocks" unique_id=46535145 instance=ExtResource("1_2c62f")]
+position = Vector2(-80, -60)
+
+[node name="Block50" parent="Blocks" unique_id=1945900394 instance=ExtResource("1_2c62f")]
+position = Vector2(0, -60)
+
+[node name="Block51" parent="Blocks" unique_id=808224385 instance=ExtResource("1_2c62f")]
+position = Vector2(160, -60)
+
+[node name="Block52" parent="Blocks" unique_id=1757077152 instance=ExtResource("1_2c62f")]
+position = Vector2(240, -60)
+
+[node name="Block53" parent="Blocks" unique_id=2068196352 instance=ExtResource("1_2c62f")]
+position = Vector2(400, -60)
+
+[node name="Block54" parent="Blocks" unique_id=139523385 instance=ExtResource("1_2c62f")]
+position = Vector2(-400, -10)
+
+[node name="Block55" parent="Blocks" unique_id=910144019 instance=ExtResource("1_2c62f")]
+position = Vector2(-240, -10)
+
+[node name="Block56" parent="Blocks" unique_id=1348201912 instance=ExtResource("1_2c62f")]
+position = Vector2(-80, -10)
+
+[node name="Block57" parent="Blocks" unique_id=1469593449 instance=ExtResource("1_2c62f")]
+position = Vector2(0, -10)
+
+[node name="Block58" parent="Blocks" unique_id=211667506 instance=ExtResource("1_2c62f")]
+position = Vector2(160, -10)
+
+[node name="Block59" parent="Blocks" unique_id=2131313573 instance=ExtResource("1_2c62f")]
+position = Vector2(240, -10)
+
+[node name="Block60" parent="Blocks" unique_id=158302382 instance=ExtResource("1_2c62f")]
+position = Vector2(400, -10)
+
+[node name="Block32" parent="Blocks" unique_id=684376702 instance=ExtResource("1_2c62f")]
+position = Vector2(480, -10)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=2066558472]
+position = Vector2(0, 250)
+script = ExtResource("3_gyfs4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1597518644]
+shape = SubResource("RectangleShape2D_2c62f")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="AnimatableBody2D" unique_id=246588329]
+modulate = Color(0.32201552, 0.34855688, 0.47406268, 1)
+scale = Vector2(200.00002, 40.00002)
+mesh = SubResource("QuadMesh_gyfs4")
+
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]

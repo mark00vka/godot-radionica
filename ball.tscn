@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://di0oivugrdg5t"]
+
+[ext_resource type="Script" uid="uid://cu3ws4n7exb4b" path="res://ball.gd" id="1_x8fbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0f027"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0f027"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_2c62f"]
+radial_segments = 4
+rings = 12
+
+[node name="Ball" type="RigidBody2D" unique_id=289943280]
+physics_material_override = SubResource("PhysicsMaterial_0f027")
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 10
+linear_velocity = Vector2(450, 450)
+script = ExtResource("1_x8fbi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=73779935]
+shape = SubResource("CircleShape2D_0f027")
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1811011691]
+position = Vector2(-2.9802322e-07, 3.33786e-06)
+scale = Vector2(20.146894, 20.146894)
+mesh = SubResource("SphereMesh_2c62f")
+metadata/_edit_lock_ = true
