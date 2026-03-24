@@ -288,3 +288,4 @@ position = Vector2(-85, -8)
 position = Vector2(1, 206)
 linear_velocity = Vector2(450, -450)
 
+[connection signal="child_exiting_tree" from="Blocks" to="." method="_on_blocks_child_exiting_tree"]
