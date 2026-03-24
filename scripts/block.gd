@@ -70,6 +70,8 @@ func play_destroy_animation():
 	tween.parallel().tween_property(self, 'global_rotation', end_rot, 0.5)
 	tween.parallel().tween_property(self, 'modulate:a', 0, 0.5)
 	
+	$HitAudio.play()
+	
 	# tween.tween_callback(queue_free) (isto kao ovo dole)
 	await tween.finished
 	queue_free()

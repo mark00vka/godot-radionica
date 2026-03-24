@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu3ws4n7exb4b" path="res://scripts/ball.gd" id="1_cxlvu"]
 [ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="2_f7cbr"]
+[ext_resource type="AudioStream" uid="uid://dxc6dkt66qlk3" path="res://sounds/hitHurt.wav" id="3_f7cbr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0f027"]
 friction = 0.0
@@ -48,6 +49,12 @@ _data = {
 &"bounce": SubResource("Animation_41u45")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f7cbr"]
+random_pitch = 1.2599211
+random_volume_offset_db = 4.0
+streams_count = 1
+stream_0/stream = ExtResource("3_f7cbr")
+
 [node name="Ball" type="RigidBody2D" unique_id=289943280]
 physics_material_override = SubResource("PhysicsMaterial_0f027")
 gravity_scale = 0.0
@@ -68,5 +75,10 @@ metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=251859914]
 libraries/ = SubResource("AnimationLibrary_ktgx5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1237232304]
+stream = SubResource("AudioStreamRandomizer_f7cbr")
+volume_db = -16.0
+pitch_scale = 2.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
