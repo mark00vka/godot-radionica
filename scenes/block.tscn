@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c8u5ep1g8vmvi"]
+
+[ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="2_xfwl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c62f"]
+size = Vector2(46, 26)
+
+[node name="Block" type="StaticBody2D" unique_id=1171922670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1917356421]
+shape = SubResource("RectangleShape2D_2c62f")
+
+[node name="WhitePixel" type="Sprite2D" parent="." unique_id=1130318222]
+modulate = Color(1, 0.58400005, 0.22000003, 1)
+scale = Vector2(45.999996, 26)
+texture = ExtResource("2_xfwl5")
