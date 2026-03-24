@@ -16,3 +16,4 @@ func _on_body_entered(body: Node) -> void:
 	if body is Block:
 		body.destroy.call_deferred()
 	$AnimationPlayer.play("bounce")
+	$AudioStreamPlayer.play()

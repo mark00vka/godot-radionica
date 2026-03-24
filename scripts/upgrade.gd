@@ -8,8 +8,13 @@ func _process(delta: float) -> void:
 	global_position.y += speed * delta
 	modulate = Color(randf(), randf(), randf())
 
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is not Player: return
+	
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.finished.connect($AudioStreamPlayer.queue_free)
+	$AudioStreamPlayer.reparent(get_tree().root)
 	
 	var ball = BALL.instantiate()
 	get_tree().root.get_node("MainScene/Balls").add_child.call_deferred(ball)
