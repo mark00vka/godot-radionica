@@ -1,7 +1,18 @@
 class_name Block
 extends StaticBody2D
 
+const UPGRADE = preload("uid://26b7711ggomk")
+
+enum BlockType { REGULAR, DROP_UPGRADE, EXPLODE }
+
+@export var block_type : BlockType = BlockType.REGULAR
+
+var destroyed : bool = false
+
 func _ready() -> void:
+	var r = randf()
+	elif r < 0.2: block_type = BlockType.DROP_UPGRADE
+	
 	play_spawn_animation()
 	
 func play_spawn_animation():
@@ -16,6 +27,16 @@ func play_spawn_animation():
 
 func destroy():
 	$CollisionShape2D.disabled = true
+	
+	match block_type:
+		BlockType.REGULAR: pass
+		BlockType.DROP_UPGRADE:
+			var upgrade := UPGRADE.instantiate()
+			get_tree().root.get_node("MainScene").add_child(upgrade)
+			upgrade.global_position = global_position
+					
+		_: push_error("Something has gone wrong")
+		
 	play_destroy_animation()
 func play_destroy_animation():
 	var direction = randf_range(-1, 1)
