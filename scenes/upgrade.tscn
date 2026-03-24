@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://26b7711ggomk"]
+
+[ext_resource type="Script" uid="uid://cs65ko13n8qeb" path="res://scripts/upgrade.gd" id="1_g1npk"]
+[ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="2_346kr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hgitt"]
+radius = 8.0
+
+[node name="Upgrade" type="Node2D" unique_id=513432535]
+script = ExtResource("1_g1npk")
+
+[node name="WhitePixel" type="Sprite2D" parent="." unique_id=266913075]
+position = Vector2(0, 1.1920929e-07)
+scale = Vector2(11.999999, 11.999999)
+texture = ExtResource("2_346kr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=490096300]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=195024867]
+shape = SubResource("CircleShape2D_hgitt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
