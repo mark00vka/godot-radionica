@@ -50,6 +50,8 @@ git branch -a
 git checkout project-setup
 ```
 
+---
+
 ### Pravljenje blockova, bordera i igraca
 **Branch:** `blocks-and-player`
 
@@ -147,3 +149,8 @@ git checkout background-shader
 git checkout level-restart
 ```
 `
+
+## Credits
+https://ansimuz.itch.io/explosion-animations-pack
+https://sfxr.me/
+https://freesound.org/
