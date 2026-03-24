@@ -11,6 +11,7 @@ var destroyed : bool = false
 
 func _ready() -> void:
 	var r = randf()
+	if r < 0.1: block_type = BlockType.EXPLODE
 	elif r < 0.2: block_type = BlockType.DROP_UPGRADE
 	
 	play_spawn_animation()
@@ -26,6 +27,8 @@ func play_spawn_animation():
 	tween.parallel().tween_property(self, 'scale', Vector2(1,1), 0.5).set_trans(Tween.TRANS_LINEAR).set_delay(0.2)
 
 func destroy():
+	if destroyed: return
+	destroyed = true
 	$CollisionShape2D.disabled = true
 	
 	match block_type:
@@ -34,10 +37,25 @@ func destroy():
 			var upgrade := UPGRADE.instantiate()
 			get_tree().root.get_node("MainScene").add_child(upgrade)
 			upgrade.global_position = global_position
+			
+		BlockType.EXPLODE:
+			play_explosion_animation()
+			await get_tree().create_timer(0.5).timeout
+			for body in $ExplosionArea.get_overlapping_bodies():
+				if body is Block: 
+					body.destroy()
 					
 		_: push_error("Something has gone wrong")
 		
 	play_destroy_animation()
+
+func play_explosion_animation():
+	$ExplosionAnimation.show()
+	$ExplosionAnimation.play("explode")
+	$ExplosionAnimation.top_level = true
+	$ExplosionAnimation.global_position = global_position
+	
+
 func play_destroy_animation():
 	var direction = randf_range(-1, 1)
 	var end_pos = global_position + Vector2.DOWN * 200 + Vector2.RIGHT * direction * 100
