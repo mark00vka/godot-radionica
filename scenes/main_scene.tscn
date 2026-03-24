@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://duhlt0ovssaxd"]
+[gd_scene format=3 uid="uid://bhppbcixev0y3"]
 
 [ext_resource type="PackedScene" uid="uid://c8u5ep1g8vmvi" path="res://scenes/block.tscn" id="1_2c62f"]
+[ext_resource type="PackedScene" uid="uid://di0oivugrdg5t" path="res://scenes/ball.tscn" id="2_2c62f"]
 [ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="4_d5x1h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2c62f"]
@@ -250,3 +251,5 @@ unique_name_in_owner = true
 modulate = Color(0.32201552, 0.34855688, 0.47406268, 1)
 scale = Vector2(200.00002, 40.00002)
 texture = ExtResource("4_d5x1h")
+
+[node name="Ball" parent="." unique_id=289943280 instance=ExtResource("2_2c62f")]
