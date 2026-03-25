@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c4pp104lwhd1o"]
+
+[ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="1_8r6n6"]
+[ext_resource type="Script" uid="uid://cjwj3fschils1" path="res://scripts/block.gd" id="1_cgrg5"]
+[ext_resource type="AudioStream" uid="uid://c577c28qnusnh" path="res://sounds/block_destroyed.wav" id="3_4kun4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pw63i"]
+size = Vector2(130, 50)
+
+[node name="Block" type="StaticBody2D" unique_id=981971340]
+script = ExtResource("1_cgrg5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1036303561]
+shape = SubResource("RectangleShape2D_pw63i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1207197040]
+modulate = Color(0.94, 0.6316801, 0.1692, 1)
+position = Vector2(0, 1.25)
+scale = Vector2(130, 51.5)
+texture = ExtResource("1_8r6n6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=183045506]
+stream = ExtResource("3_4kun4")

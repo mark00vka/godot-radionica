@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://d3rvcv6mfk63c"]
+
+[ext_resource type="PackedScene" uid="uid://c4pp104lwhd1o" path="res://scenes/block.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://brmgu7qvpyike" path="res://scenes/player.tscn" id="2_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://kl7w55631dk2" path="res://scenes/ball.tscn" id="3_7ykc4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pw63i"]
+distance = -300.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7ykc4"]
+normal = Vector2(1, 0)
+distance = -399.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pu3yx"]
+normal = Vector2(-1, 0)
+distance = -399.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gubc5"]
+normal = Vector2(0, 1)
+distance = -299.0
+
+[node name="MainScene" type="Node2D" unique_id=1260079213]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1407176539]
+
+[node name="Blocks" type="Node2D" parent="." unique_id=566556273]
+
+[node name="Block" parent="Blocks" unique_id=981971340 instance=ExtResource("1_w2twt")]
+
+[node name="Block2" parent="Blocks" unique_id=111734613 instance=ExtResource("1_w2twt")]
+position = Vector2(160, 0)
+
+[node name="Block3" parent="Blocks" unique_id=156831343 instance=ExtResource("1_w2twt")]
+position = Vector2(-160, 0)
+
+[node name="Block4" parent="Blocks" unique_id=788851527 instance=ExtResource("1_w2twt")]
+position = Vector2(0, -90)
+
+[node name="Block5" parent="Blocks" unique_id=1176135160 instance=ExtResource("1_w2twt")]
+position = Vector2(160, -90)
+
+[node name="Block6" parent="Blocks" unique_id=354220053 instance=ExtResource("1_w2twt")]
+position = Vector2(-160, -90)
+
+[node name="Block7" parent="Blocks" unique_id=1217868739 instance=ExtResource("1_w2twt")]
+position = Vector2(0, -180)
+
+[node name="Block8" parent="Blocks" unique_id=1882196958 instance=ExtResource("1_w2twt")]
+position = Vector2(160, -180)
+
+[node name="Block9" parent="Blocks" unique_id=283106174 instance=ExtResource("1_w2twt")]
+position = Vector2(-160, -180)
+
+[node name="Player" parent="." unique_id=2048125089 instance=ExtResource("2_pu3yx")]
+position = Vector2(0, 220)
+
+[node name="Ball" parent="." unique_id=150960431 instance=ExtResource("3_7ykc4")]
+position = Vector2(0, 100)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=1822321360]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=506519181]
+shape = SubResource("WorldBoundaryShape2D_pw63i")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Boundaries" unique_id=1896355807]
+shape = SubResource("WorldBoundaryShape2D_7ykc4")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Boundaries" unique_id=1996663235]
+shape = SubResource("WorldBoundaryShape2D_pu3yx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boundaries" unique_id=393536015]
+shape = SubResource("WorldBoundaryShape2D_gubc5")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://brmgu7qvpyike"]
+
+[ext_resource type="Texture2D" uid="uid://bh3dvwhbh16bk" path="res://assets/white_pixel.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bch2nxj7g6amc" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ykc4"]
+size = Vector2(240, 40)
+
+[node name="Player" type="AnimatableBody2D" unique_id=2048125089]
+script = ExtResource("1_g2els")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=184293924]
+shape = SubResource("RectangleShape2D_7ykc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=16349318]
+modulate = Color(0.4206668, 0.20999998, 1, 1)
+scale = Vector2(240, 40)
+texture = ExtResource("1_3vyb7")
